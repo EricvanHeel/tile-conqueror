@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://boffnnwuw5foi"]
+
+[ext_resource type="Script" path="res://components/game_state_component.gd" id="1_b5kx1"]
+[ext_resource type="Script" path="res://extended_scripts/center_camera2d.gd" id="1_blx51"]
+[ext_resource type="PackedScene" uid="uid://vrjggwg3oy8h" path="res://scenes/CustomTileMap.tscn" id="1_e3lhq"]
+[ext_resource type="PackedScene" uid="uid://crf5bs5ykw5do" path="res://scenes/PlayerInfo.tscn" id="3_874tn"]
+
+[node name="World" type="Node2D"]
+
+[node name="GameStateComponent" type="Node2D" parent="." node_paths=PackedStringArray("player_info")]
+script = ExtResource("1_b5kx1")
+player_names = Array[String](["red", "white", "purple", "blue"])
+player_info = NodePath("../CanvasLayer/PlayerInfo")
+
+[node name="CustomTileMap" parent="." node_paths=PackedStringArray("game_state") instance=ExtResource("1_e3lhq")]
+game_state = NodePath("../GameStateComponent")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("tile_map")]
+script = ExtResource("1_blx51")
+tile_map = NodePath("../CustomTileMap")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerInfo" parent="CanvasLayer" instance=ExtResource("3_874tn")]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://q20id3n6ao4b"]
+
+[ext_resource type="Texture2D" uid="uid://kjegjofgncqx" path="res://assets/icons/tile-targets/attack_animation.png" id="1_xkf2p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjy82"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2nwm"]
+atlas = ExtResource("1_xkf2p")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k08j0"]
+atlas = ExtResource("1_xkf2p")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf8gg"]
+atlas = ExtResource("1_xkf2p")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eq1m"]
+atlas = ExtResource("1_xkf2p")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0w3k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2nwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k08j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf8gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eq1m")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 4.0
+}]
+
+[node name="AttackTarget" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fjy82")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k0w3k")
+animation = &"attack"
+autoplay = "attack"
+frame = 3
+frame_progress = 0.249604

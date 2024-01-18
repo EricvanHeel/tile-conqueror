@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://dm0w56tc4tq4p"]
+
+[ext_resource type="Texture2D" uid="uid://ccmf4cic21jfh" path="res://assets/icons/tile-targets/spyglass_animation.png" id="1_4ouw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrs3v"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkg72"]
+atlas = ExtResource("1_4ouw5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwtvd"]
+atlas = ExtResource("1_4ouw5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj0xu"]
+atlas = ExtResource("1_4ouw5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1eh3"]
+atlas = ExtResource("1_4ouw5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgoo1"]
+atlas = ExtResource("1_4ouw5")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1h2e"]
+atlas = ExtResource("1_4ouw5")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ojvt"]
+atlas = ExtResource("1_4ouw5")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsung"]
+atlas = ExtResource("1_4ouw5")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdo2p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkg72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwtvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj0xu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1eh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgoo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1h2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ojvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsung")
+}],
+"loop": true,
+"name": &"deploy",
+"speed": 6.0
+}]
+
+[node name="Fortify" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hrs3v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fdo2p")
+animation = &"deploy"
+autoplay = "deploy"
+frame_progress = 0.202663

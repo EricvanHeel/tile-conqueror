@@ -1,0 +1,65 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dse0at6a5vhqv"]
+
+[ext_resource type="FontFile" uid="uid://ttek512jcmeh" path="res://assets/fonts/rainyhearts.ttf" id="1_pm528"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0pqj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86du4"]
+bg_color = Color(0, 0, 0, 0.294118)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3ymm"]
+bg_color = Color(1, 1, 1, 0.294118)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14yyx"]
+bg_color = Color(0, 0, 0, 0.294118)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsdnw"]
+bg_color = Color(0.505882, 0.388235, 0.337255, 1)
+
+[resource]
+default_font = ExtResource("1_pm528")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_w0pqj")
+Button/styles/hover = SubResource("StyleBoxFlat_86du4")
+Button/styles/normal = SubResource("StyleBoxFlat_j3ymm")
+Button/styles/pressed = SubResource("StyleBoxFlat_14yyx")
+Label/colors/font_color = Color(0.862745, 0.862745, 0.862745, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.498039)
+Panel/styles/panel = SubResource("StyleBoxFlat_lsdnw")
+RichTextLabel/colors/default_color = Color(0.862522, 0.862522, 0.862522, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.498039)

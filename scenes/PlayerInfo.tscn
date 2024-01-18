@@ -1,0 +1,182 @@
+[gd_scene load_steps=9 format=3 uid="uid://crf5bs5ykw5do"]
+
+[ext_resource type="Theme" uid="uid://dse0at6a5vhqv" path="res://assets/themes/default.tres" id="1_qge7n"]
+[ext_resource type="Script" path="res://components/player_info_component.gd" id="1_ustc8"]
+[ext_resource type="Texture2D" uid="uid://bnljwl3etk7at" path="res://assets/icons/food_2.png" id="3_tmuni"]
+[ext_resource type="Texture2D" uid="uid://bdbgpn6bj2our" path="res://assets/icons/wood_2.png" id="4_8sbxg"]
+[ext_resource type="Texture2D" uid="uid://17hs375vmkhw" path="res://assets/icons/stone_2.png" id="5_3723e"]
+[ext_resource type="Texture2D" uid="uid://r4wvjhchlvun" path="res://assets/icons/militia_2.png" id="6_ejhgr"]
+[ext_resource type="Texture2D" uid="uid://cwei7ebovgvg7" path="res://assets/icons/deploy_army.png" id="7_d6hu3"]
+[ext_resource type="Texture2D" uid="uid://ctvb4fs5ot166" path="res://assets/icons/deploy_army_disabled.png" id="8_bj47r"]
+
+[node name="PlayerInfo" type="Node2D" node_paths=PackedStringArray("player_label", "action_label", "food_label", "wood_label", "stone_label", "militia_label", "gained_food_label", "gained_wood_label", "gained_stone_label", "gained_militia_label", "game_button", "deploy_button")]
+script = ExtResource("1_ustc8")
+player_label = NodePath("PlayerLabel")
+action_label = NodePath("CurrentAction")
+food_label = NodePath("ResourcesController/FoodLabel")
+wood_label = NodePath("ResourcesController/WoodLabel")
+stone_label = NodePath("ResourcesController/StoneLabel")
+militia_label = NodePath("ResourcesController/MilitiaLabel")
+gained_food_label = NodePath("ResourcesController/GainedFood")
+gained_wood_label = NodePath("ResourcesController/GainedWood")
+gained_stone_label = NodePath("ResourcesController/GainedStone")
+gained_militia_label = NodePath("ResourcesController/GainedMilitia")
+game_button = NodePath("GameButton")
+deploy_button = NodePath("DeployArmyButton")
+
+[node name="PlayerLabel" type="RichTextLabel" parent="."]
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 117.0
+offset_bottom = 24.0
+theme = ExtResource("1_qge7n")
+bbcode_enabled = true
+
+[node name="GameButton" type="Button" parent="."]
+visible = false
+offset_left = 316.0
+offset_top = 188.0
+offset_right = 380.0
+offset_bottom = 212.0
+theme = ExtResource("1_qge7n")
+text = "End Turn"
+
+[node name="CurrentAction" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 191.0
+offset_right = 129.0
+offset_bottom = 215.0
+theme = ExtResource("1_qge7n")
+vertical_alignment = 1
+
+[node name="ResourcesController" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 384.0
+offset_bottom = 24.0
+theme = ExtResource("1_qge7n")
+
+[node name="Food" type="TextureRect" parent="ResourcesController"]
+layout_mode = 0
+offset_left = 120.0
+offset_right = 144.0
+offset_bottom = 24.0
+texture = ExtResource("3_tmuni")
+
+[node name="Wood" type="TextureRect" parent="ResourcesController"]
+layout_mode = 0
+offset_left = 180.0
+offset_right = 204.0
+offset_bottom = 24.0
+texture = ExtResource("4_8sbxg")
+
+[node name="Stone" type="TextureRect" parent="ResourcesController"]
+layout_mode = 0
+offset_left = 240.0
+offset_right = 264.0
+offset_bottom = 24.0
+texture = ExtResource("5_3723e")
+
+[node name="Militia" type="TextureRect" parent="ResourcesController"]
+layout_mode = 0
+offset_left = 317.0
+offset_right = 341.0
+offset_bottom = 24.0
+texture = ExtResource("6_ejhgr")
+
+[node name="FoodLabel" type="Label" parent="ResourcesController"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 4.0
+offset_right = 178.0
+offset_bottom = 24.0
+theme = ExtResource("1_qge7n")
+text = "0"
+vertical_alignment = 1
+
+[node name="GainedFood" type="Label" parent="ResourcesController"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 140.0
+offset_top = 20.0
+offset_right = 172.0
+offset_bottom = 40.0
+theme = ExtResource("1_qge7n")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "+0"
+vertical_alignment = 1
+
+[node name="WoodLabel" type="Label" parent="ResourcesController"]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 4.0
+offset_right = 235.0
+offset_bottom = 24.0
+theme = ExtResource("1_qge7n")
+text = "0"
+vertical_alignment = 1
+
+[node name="GainedWood" type="Label" parent="ResourcesController"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 197.0
+offset_top = 20.0
+offset_right = 229.0
+offset_bottom = 40.0
+theme = ExtResource("1_qge7n")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "+1"
+vertical_alignment = 1
+
+[node name="StoneLabel" type="Label" parent="ResourcesController"]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 4.0
+offset_right = 297.0
+offset_bottom = 24.0
+theme = ExtResource("1_qge7n")
+text = "0"
+vertical_alignment = 1
+
+[node name="GainedStone" type="Label" parent="ResourcesController"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 259.0
+offset_top = 20.0
+offset_right = 291.0
+offset_bottom = 40.0
+theme = ExtResource("1_qge7n")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "+2"
+vertical_alignment = 1
+
+[node name="MilitiaLabel" type="Label" parent="ResourcesController"]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 4.0
+offset_right = 370.0
+offset_bottom = 24.0
+theme = ExtResource("1_qge7n")
+text = "0"
+vertical_alignment = 1
+
+[node name="GainedMilitia" type="Label" parent="ResourcesController"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 332.0
+offset_top = 20.0
+offset_right = 364.0
+offset_bottom = 40.0
+theme = ExtResource("1_qge7n")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "+3"
+vertical_alignment = 1
+
+[node name="DeployArmyButton" type="TextureButton" parent="."]
+offset_left = 306.0
+offset_top = 8.0
+offset_right = 317.0
+offset_bottom = 19.0
+disabled = true
+texture_normal = ExtResource("7_d6hu3")
+texture_disabled = ExtResource("8_bj47r")

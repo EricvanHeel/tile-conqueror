@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://h41owctkh8ut"]
+
+[ext_resource type="Texture2D" uid="uid://dxhl4jem48vp2" path="res://assets/tiles/farming-town.png" id="1_hhe28"]
+
+[node name="MainMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 2
+
+[node name="MenuDetails" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MenuOptions" type="VBoxContainer" parent="GridContainer/MenuDetails"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="GridContainer/MenuDetails/MenuOptions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "Tile Conqueror"
+
+[node name="Label2" type="Label" parent="GridContainer/MenuDetails/MenuOptions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "New Game"
+
+[node name="Label3" type="Label" parent="GridContainer/MenuDetails/MenuOptions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Settings"
+
+[node name="Label4" type="Label" parent="GridContainer/MenuDetails/MenuOptions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "How To Play"
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_hhe28")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_hhe28")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_hhe28")
+expand_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_hhe28")
+expand_mode = 2
